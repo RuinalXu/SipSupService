@@ -40,6 +40,8 @@ target_link_libraries(${EXE_NAME} PRIVATE
     glog::glog
     gflags::gflags
     tinyxml2::tinyxml2
+    JsonCpp::JsonCpp
+    libevent::extra
+    libevent::pthreads
 )
-target_link_libraries(${EXE_NAME} PRIVATE JsonCpp::JsonCpp)
-target_link_libraries(${EXE_NAME} PRIVATE libevent::core libevent::extra libevent::pthreads)
+
