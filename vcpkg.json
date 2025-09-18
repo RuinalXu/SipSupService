@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    "gflags",
+    "glog",
+    "jsoncpp",
+    "libevent",
+    "tinyxml2",
+    "fmt"
+  ]
+}

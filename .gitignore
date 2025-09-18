@@ -1,0 +1,12 @@
+.DS_Store
+
+CMakeUserPresets.json
+
+/build
+/build/
+
+/logs
+/logs/
+
+/ports-overlay
+/ports-overlay/
