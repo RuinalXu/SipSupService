@@ -12,3 +12,5 @@ CMakeUserPresets.json
 /ports-overlay/
 
 /NOTE.md
+
+/.vscode
