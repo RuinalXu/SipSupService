@@ -2,16 +2,16 @@
 
 CMakeUserPresets.json
 
-/build
+NOTE.md
+
+build
 /build/
 
-/logs
+logs
 /logs/
 
-/ports-overlay
+ports-overlay
 /ports-overlay/
 
-/NOTE.md
-
-/.vscode
+.vscode
 /.vscode/

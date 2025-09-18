@@ -1,8 +1,3 @@
-#include <fstream>
-#include <cassert>
-#include <cstdio>
-#include <cstdlib>
-
 #include "config_reader.h"
 
 #define MAX_INI_FILE_SIZE 1024*10
