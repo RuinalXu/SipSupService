@@ -4,6 +4,7 @@
 #include <glog/logging.h>
 #include <fmt/base.h>
 
+#include <common.h>
 
 #define LOG_DIR "./logs"
 #define LOG_GILE_NAME "SipServer.log"
@@ -34,10 +35,19 @@ public:
 
 int main(int argc, char ** argv) {
 
+    // 忽略control+c的信号
+    signal(SIGINT, SIG_IGN);
+
     SetGlogLevel glog(0);
     LOG(INFO) << "==> this is INFO glog";
     LOG(WARNING) << "==> this is WARNING glog";
     LOG(ERROR) << "==> this is ERROR glog";
     fmt::print("Hello SipSupService");
+
+    while (true)
+    {
+        std::this_thread::sleep_for(std::chrono::seconds(30));
+    }
+    
     return 0;
 }
