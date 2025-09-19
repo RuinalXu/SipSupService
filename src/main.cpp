@@ -3,10 +3,10 @@
 #include "common.h"
 #include "log_manager.h"
 #include "sip_local_config.h"
-
+#include "global_controller.h"
 
 int main(int argc, char ** argv) {
-    fmt::print("Hello SipSupService");
+    fmt::print("Hello SipSupService\n");
 
     // 忽略control+c的信号
     signal(SIGINT, SIG_IGN);
@@ -14,11 +14,17 @@ int main(int argc, char ** argv) {
     loger::GlogInitializer glogInit(0);
     
     SipLocalConfig* config = new SipLocalConfig();
-
     int ret = config -> readConfig();
-
-    fmt::print("ret = {}", ret);
-
+    if (ret == -1) {
+        LOG(ERROR) << "read config error";
+        return ret;
+    }
+    bool re = GlobalController::instance() -> init(config);
+    if (re == false) {
+        LOG(ERROR) << "init error";
+        return -1;
+    }
+    LOG(INFO) << GBOJ(g_config) -> localIp();
 
     while (true)
     {
