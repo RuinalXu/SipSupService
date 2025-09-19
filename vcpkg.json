@@ -5,6 +5,7 @@
     "glog",
     "jsoncpp",
     "libevent",
+    "spdlog",
     "tinyxml2",
     "yaml-cpp"
   ]
