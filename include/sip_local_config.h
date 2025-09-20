@@ -9,26 +9,25 @@
 
 
 class SipLocalConfig {
-private:
-    ConfigReader m_conf;
-    std::string m_localIp;
-    int m_localPort;
-    std::string m_sipId;
-    std::string m_sipIp;
-    int m_sipPort;
-    std::string m_usr;
-    std::string m_pwd;
-    std::string m_sipRealm;
-    std::string m_subNodeIp;
-    int m_subNodePort;
-    int m_subNodePoto;
-    int m_subNodeAuth;
-    int m_rtpPortBegin;
-    int m_rtpPortEnd;
 public:
     SipLocalConfig();
     ~SipLocalConfig();
     int readConfig();
+    inline std::string localIp() const { return m_localIp; }
+    inline int localPort() const { return m_localPort; }
+    inline std::string sipIp() const { return m_sipIp; }
+    inline int sipPort() const { return m_sipPort; }
+private:
+    ConfigReader m_conf;
+    std::string m_localIp;
+    int m_localPort;
+    std::string m_sipIp;
+    int m_sipPort;
+
+    std::string m_subNodeIp;
+    int m_subNodePort;
+    int m_subNodePoto;
+    int m_subNodeAuth;
 };
 
 
