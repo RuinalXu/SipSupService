@@ -1,5 +1,5 @@
-#ifndef _SIP_LOCAL_CONFIG_H
-#define _SIP_LOCAL_CONFIG_H
+#ifndef SIP_LOCAL_CONFIG_H
+#define SIP_LOCAL_CONFIG_H
 
 #include "config_reader.h"
 #include "common.h"

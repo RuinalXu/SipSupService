@@ -1,8 +1,9 @@
-#ifndef _GLOBAL_CONTROLLER_H
-#define _GLOBAL_CONTROLLER_H
+#ifndef GLOBAL_CONTROLLER_H
+#define GLOBAL_CONTROLLER_H
 
 #include "common.h"
 #include "sip_local_config.h"
+#include "thread_pool.h"
 
 class  GlobalController;
 #define GBOJ(obj) GlobalController::instance()->obj
@@ -24,6 +25,8 @@ public:
     SipLocalConfig* g_config;
     static GlobalController* instance();
     bool init(void* param);
+
+    ThreadPool* gThreadPool = NULL;
 };
 
 #endif

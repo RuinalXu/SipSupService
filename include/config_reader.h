@@ -1,5 +1,5 @@
-#ifndef _CONFIG_READER_H
-#define _CONFIG_READER_H
+#ifndef CONFIG_READER_H
+#define CONFIG_READER_H
 
 #include <string>
 #include <string.h>

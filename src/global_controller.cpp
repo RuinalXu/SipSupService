@@ -14,5 +14,9 @@ bool GlobalController::init(void* param) {
     if (!g_config) {
         return false;
     }
+    if (!gThreadPool) {
+        gThreadPool = new ThreadPool();
+        gThreadPool -> createThreadPool(10);
+    }
     return true;
 }
