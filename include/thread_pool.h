@@ -2,7 +2,7 @@
 #define THREAD_POOL_H
 
 #include <queue>
-#include <unsitd.h>
+#include <unistd.h>
 #include <semaphore.h>
 
 #include "common.h"
