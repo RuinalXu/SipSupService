@@ -25,7 +25,7 @@ find_package(glog CONFIG REQUIRED)
 find_package(gflags CONFIG REQUIRED)
 find_package(jsoncpp CONFIG REQUIRED)
 find_package(tinyxml2 CONFIG REQUIRED)
-find_package(libevent CONFIG REQUIRED)
+find_package(Libevent CONFIG REQUIRED)
 
 # 指定需要编译的源文件路径，并指定相应的变量名
 aux_source_directory(./src SRC)
