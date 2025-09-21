@@ -32,9 +32,9 @@ public:
 
     static void* mainThread(void* argc);
 
-    static queue<ThreadTask*> m_taskQueue;
+    static std::queue<ThreadTask*> m_taskQueue;
 
     static pthread_mutex_t m_queueLock;
-}
+};
 
  #endif
