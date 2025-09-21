@@ -2,7 +2,7 @@
 
 // pthread_mutex_t ThreadPool::m_queueLock = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t ThreadPool::m_queueLock;
-queue<ThreadTask*> ThreadPool::m_taskQueue;
+std::queue<ThreadTask*> ThreadPool::m_taskQueue;
 
 ThreadPool::ThreadPool() {
     pthread_mutex_init(&m_queueLock, NULL);
@@ -26,7 +26,7 @@ void* ThreadPool::mainThread(void* argc) {
             // 加互斥锁
             pthread_mutex_lock(&m_queueLock);
             if (m_taskQueue.size() > 0) {
-                task = m_taskQueue.front()
+                task = m_taskQueue.front();
                 m_taskQueue.pop();
             }
             // 解锁
@@ -37,7 +37,7 @@ void* ThreadPool::mainThread(void* argc) {
             }
         }
         
-    } while (true)
+    } while (true);
 }
 
 int ThreadPool::createThreadPool(int threadCount) {
