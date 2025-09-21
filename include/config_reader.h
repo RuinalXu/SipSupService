@@ -7,6 +7,7 @@
 #include <cassert>
 #include <cstdio>
 #include <cstdlib>
+#include <vector>
 
 class ConfigReader{
 private:
