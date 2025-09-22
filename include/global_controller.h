@@ -6,7 +6,7 @@
 #include "thread_pool.h"
 
 class  GlobalController;
-#define GBOJ(obj) GlobalController::instance()->obj
+#define GBOJ(obj) GlobalController::instance() -> obj
 
 /**
  * 全局类： 管理下级平台及设备信息、线程池对象，以及sipserver对象；

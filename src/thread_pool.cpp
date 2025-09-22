@@ -14,6 +14,21 @@ ThreadPool::~ThreadPool() {
     sem_destroy(&m_signalSem);
 }
 
+int ThreadPool::createThreadPool(int threadCount) {
+    if (threadCount <= 0) {
+        LOG(ERROR) << " thread count error";
+        return -1;
+    }
+    for (int i = 0; i < threadCount; i++) {
+        pthread_t pid;
+        if (embedded_controller::ECThread::createThread(ThreadPool::mainThread, (void*)this, pid) < 0) {
+            LOG(ERROR) << "create thread error";
+        }
+        LOG(INFO) << "thread:" << pid << " was created";
+    }
+    return 0;
+}
+
 /**
  * 线程入口函数
  */
@@ -38,20 +53,6 @@ void* ThreadPool::mainThread(void* argc) {
         }
         
     } while (true);
-}
-
-int ThreadPool::createThreadPool(int threadCount) {
-    if (threadCount <= 0) {
-        LOG(ERROR) << "thread count error";
-        return -1;
-    }
-    for (int i = 0; i < threadCount; i++) {
-        pthread_t pid;
-        if (embedded_controller::ECThread::createThread(ThreadPool::mainThread, (void*)this, pid) < 0) {
-            LOG(ERROR) << "create thread error";
-        }
-        LOG(INFO) << "thread:" << pid << "was created";
-    }
 }
 
 int ThreadPool::waitTask(){
