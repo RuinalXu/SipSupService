@@ -14,9 +14,16 @@ bool GlobalController::init(void* param) {
     if (!g_config) {
         return false;
     }
+
     if (!gThreadPool) {
         gThreadPool = new ThreadPool();
         gThreadPool -> createThreadPool(10);
     }
+
+    if (!gSipServer) {
+        gSipServer = news gSipServer();
+    }
+    gSipServer -> initSip(g_config -> sipPort())
+
     return true;
 }

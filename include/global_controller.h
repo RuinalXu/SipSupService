@@ -4,6 +4,7 @@
 #include "common.h"
 #include "sip_local_config.h"
 #include "thread_pool.h"
+#include 'sip_core.h'
 
 class  GlobalController;
 #define GBOJ(obj) GlobalController::instance() -> obj
@@ -23,10 +24,14 @@ private:
     static GlobalController* m_pInstance;
 public:
     SipLocalConfig* g_config;
+    
     static GlobalController* instance();
+
     bool init(void* param);
 
     ThreadPool* gThreadPool = NULL;
+
+    SipCore* gSipServer = NULL;
 };
 
 #endif
